@@ -1,0 +1,22 @@
+﻿<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Konfirmasi data paspor dan ukuran jaket dengan aman.">
+  <title>Konfirmasi Data Paspor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="aurora aurora-one"></div><div class="aurora aurora-two"></div>
+  <main class="shell">
+    <header class="hero"><div class="eyebrow"><span class="pulse"></span> VERIFIKASI DOKUMEN</div><h1>Pastikan data paspor Anda <em>tepat.</em></h1><p>Temukan data Anda, periksa setiap detail, lalu konfirmasi atau kirimkan catatan revisi.</p></header>
+    <section class="search-card" aria-labelledby="search-title"><div class="section-heading"><span class="step">01</span><div><h2 id="search-title">Temukan data Anda</h2><p>Masukkan nama lengkap dan 3 awalan nomor paspor.</p></div></div><form id="search-form" class="search-form"><label>Nama lengkap<input id="name-input" name="name" autocomplete="name" placeholder="Contoh: Ahmad Fauzan" required></label><label class="prefix-field">3 awalan paspor<input id="prefix-input" name="passportPrefix" maxlength="3" autocomplete="off" placeholder="ABC" required></label><button class="button button-primary" type="submit" id="search-button"><span>Cari data</span><span class="arrow">→</span></button></form><p id="search-status" class="status" role="status"></p></section>
+    <section id="result-section" class="result-card hidden" aria-live="polite"><div class="result-top"><div class="section-heading"><span class="step">02</span><div><h2>Periksa data paspor</h2><p>Pastikan data di bawah sudah sesuai dokumen asli.</p></div></div><span id="result-badge" class="badge">DATA DITEMUKAN</span></div><div id="duplicate-list" class="duplicate-list hidden"></div><dl id="passport-details" class="details-grid"></dl><div class="actions-divider"></div><div class="confirmation-area"><div class="confirm-copy"><span class="step">03</span><div><h2>Sudah benar?</h2><p>Konfirmasi untuk menyimpan status dan waktu pemeriksaan.</p></div></div><button class="button button-confirm" id="confirm-button" type="button">✓ &nbsp;Konfirmasi data benar</button></div><div class="revision-area"><label for="revision-input">Ada data yang perlu diperbaiki?</label><textarea id="revision-input" rows="3" maxlength="1000" placeholder="Tuliskan bagian data yang perlu diperbaiki..."></textarea><div class="revision-footer"><small>Maks. 1.000 karakter</small><button class="button button-outline" id="revision-button" type="button">Kirim revisi&nbsp; →</button></div></div><p id="action-status" class="status" role="status"></p></section>
+    <footer><span>Data Anda diproses secara aman</span><span class="dot">•</span><span>Powered by secure verification</span></footer>
+  </main><script src="app.js"></script>
+</body>
+</html>
