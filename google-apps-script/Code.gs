@@ -58,5 +58,5 @@ function doPost(e) {
 function getSheet() { const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME); if (!sheet) throw new Error('Tab Data tidak ditemukan.'); return sheet; }
 function readCount(sheet, rowId, column) { const value = Number(sheet.getRange(rowId, column).getValue()); return Number.isFinite(value) && value >= 0 ? value : 0; }
 function normalize(value) { return String(value || '').trim().toLowerCase().replace(/\s+/g, ' '); }
-function mapRow(r, rowId) { return { rowId, name: r[0], birthPlace: r[1], birthDate: r[2], gender: r[3], passportNumber: r[4], issueDate: r[5], expiryDate: r[6], jacketSize: r[9], revisionCount: Number(r[13]) || 0, confirmCount: Number(r[14]) || 0, revisionLimit: REVISION_LIMIT, confirmLimit: CONFIRM_LIMIT }; }
+function mapRow(r, rowId) { return { rowId, name: r[0], birthPlace: r[1], birthDate: r[2], gender: r[3], passportNumber: r[4], issueDate: r[5], expiryDate: r[6], jacketSize: r[9], confirmed: String(r[10] || '').trim().toLowerCase() === 'terkonfirmasi', revisionCount: Number(r[13]) || 0, confirmCount: Number(r[14]) || 0, revisionLimit: REVISION_LIMIT, confirmLimit: CONFIRM_LIMIT }; }
 function json(payload) { return ContentService.createTextOutput(JSON.stringify(payload)).setMimeType(ContentService.MimeType.JSON); }
